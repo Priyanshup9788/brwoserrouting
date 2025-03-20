@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const View = () => {
 
@@ -28,12 +29,13 @@ const View = () => {
                 <th>Action</th>
             </tr>
         </thead>
+        
         <tbody>
             {allEmp.map((emp,i)=>(
                 <tr key={i}>
                 <td id="displayName">{emp.name}</td>
                 <td id="displayEmail">{emp.email}</td>
-                <td><button onClick={(e)=>onDelete(e,emp.id)}>Delete</button></td>
+                <td><button onClick={(e)=>onDelete(e,emp.id)}>Delete</button> || <Link to={"/edit/"+emp.id}>Edit</Link></td>
             </tr>
             ))}
             
