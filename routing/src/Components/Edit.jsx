@@ -18,7 +18,6 @@ const Edit = () => {
       console.log(id.index)
       let indexData = allEmp.findIndex((v,i)=>v.id==parseInt(id.index));
       return allEmp[indexData];
-     
     }
   );
   console.log(emp);
@@ -44,7 +43,8 @@ const Edit = () => {
     }
     setAllEmp([...allEmp,{...newEmp , id:newId}]);
     newEmp.name="";
-    newEmp.email=""
+    newEmp.email="";
+    
   }
 
   return (
@@ -55,7 +55,7 @@ const Edit = () => {
             <input onChange={(e)=>onInputChange(e)} name="name" type="text" id="name" value={emp.name?emp.name:""} required />
             
             <label htmlFor="email">Email:</label>
-            <input onChange={(e)=>onInputChange(e)} name="email" type="email" id="email"  required />
+            <input onChange={(e)=>onInputChange(e)} name="email" type="email" id="email" value={emp.email?emp.email:""}  required />
             
             <button type="submit">Submit</button>
         </form>
